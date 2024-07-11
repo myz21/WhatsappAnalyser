@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload WhatsApp Files</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Upload WhatsApp Files</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="start_date">Start Date (dd.mm.yyyy):</label>
+        <input type="text" id="start_date" name="start_date" required>
+        <br>
+        <label for="end_date">End Date (dd.mm.yyyy):</label>
+        <input type="text" id="end_date" name="end_date" required>
+        <br>
+        <label for="words_to_count">Words to Count (comma-separated):</label>
+        <input type="text" id="words_to_count" name="words_to_count" required>
+        <br>
+        <input type="file" name="files[]" multiple required>
+        <br>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>

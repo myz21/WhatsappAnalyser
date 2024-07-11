@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Counts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Message Counts</h1>
+    <ul>
+        {% for filename, count_dict in message_counts %}
+            <li><strong>{{ filename }}:</strong></li>
+            <ul>
+                {% for word, count in count_dict.items() %}
+                    <li>{{ word }}: {{ count }} kez (He valla)</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+    <a href="/">Daha fazla analiz yap</a>
+</body>
+</html>
